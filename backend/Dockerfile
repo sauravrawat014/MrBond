@@ -1,18 +1,14 @@
 FROM node:20
+
+
 WORKDIR /app
 
-# Copy & install backend deps
-COPY backend/package*.json ./backend/
-RUN cd backend && npm install
+COPY package*.json ./
 
-# Copy & build frontend
-COPY frontend/package*.json ./frontend/
-COPY frontend/ ./frontend/
-RUN cd frontend && npm install && npm run build
+RUN npm install
 
-# Copy backend code
-COPY backend/ ./backend/
-WORKDIR /app/backend
+COPY . .
 
-EXPOSE $PORT
+EXPOSE 8080
+
 CMD ["npm", "start"]
