@@ -10,13 +10,14 @@ export default function Order(){
     const [number, setNumber] = useState('');
     const [quantity, setQuantity] = useState('');
 
-    const backendUrl = import.meta.env.VITE_API_URL;
+    const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
     const handleSubmit = async(e)=>{
         e.preventDefault();
         try{
 
             await axios.post(`${backendUrl}/api/order`, {name,email,number,quantity});
+            console.log("clicked");
 
         } catch(error){
             console.log(error);
