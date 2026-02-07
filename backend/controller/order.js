@@ -19,7 +19,7 @@ export const sendOrderEmail = async (req, res) => {
         // Send email with AWAIT
         await transporter.sendMail({
             from: "picmactv@gmail.com",
-            to: "abhishekhaabhai@gmail.com",
+            to: "tubestack014@gmail.com",
             subject: "Water Bottle Order",
             
             html: `
