@@ -10,7 +10,7 @@ export default function Order(){
     const [number, setNumber] = useState('');
     const [quantity, setQuantity] = useState('');
 
-    const backendUrl = import.meta.env.VITE_BACKEND_URL;
+    const backendUrl = "https://mrbond-2.onrender.com";
 
     const handleSubmit = async(e)=>{
         e.preventDefault();
